@@ -7,6 +7,9 @@ jobs:
     steps:
       - name: info
         run: |
-          uname -m
-          arch
-          sysctl hw
+          if [ $(uname -m) != "x86_64" ]
+          then
+              sysctl hw
+              echo "$(uname -m) detected"
+              exit -1
+          fi
