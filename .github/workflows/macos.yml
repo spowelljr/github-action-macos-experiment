@@ -1,0 +1,12 @@
+name: macos-test
+on:
+  workflow_dispatch:
+jobs:
+  get-macos-info:
+    runs-on: macos-13
+    steps:
+      - name: info
+        run: |
+          uname -m
+          arch
+          sysctl hw
